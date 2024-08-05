@@ -12,25 +12,25 @@
 
 ## 🛠️ Tools Used
 
-- 🐍 **Python**: For developing the tool and preprocessing data.
-- ☕ **Java**: For analyzing the source code.
-- 📋 **Pandas**: For reading and preprocessing CSV files.
-- 🌳 **SrcML**: For extracting ASTs.
-- 🕸️ **Progex**: For extracting CFGs.
-- 🧩 **Comex**: For extracting PDGs and combining representations.
+- **Python**: For developing the tool and preprocessing data.
+- **Java**: For analyzing the source code.
+- **Pandas**: For reading and preprocessing CSV files.
+- **SrcML**: For extracting ASTs.
+- **Progex**: For extracting CFGs.
+- **Comex**: For extracting PDGs and combining representations.
 
 ## ⚠️ Limitations
 
-- ⚙️ Limited dataset diversity and system configuration constraints.
-- 📝 Dependency on bug report quality.
-- ⛔ Currently supports only Java source code.
+- Limited dataset diversity and system configuration constraints.
+- Dependency on bug report quality.
+- Currently supports only Java source code.
 
 ## 🚀 Future Work
 
-- 🌐 Expanding to support other programming languages.
-- 📈 Enhancing model training with more diverse datasets.
-- 🛠️ Integrating with popular IDEs for real-time bug localization.
-- 🤝 Encouraging community contributions for continuous improvement.
+- Expanding to support other programming languages.
+- Enhancing model training with more diverse datasets.
+- Integrating with popular IDEs for real-time bug localization.
+- Encouraging community contributions for continuous improvement.
 
 ## 👥 Contributors
 
