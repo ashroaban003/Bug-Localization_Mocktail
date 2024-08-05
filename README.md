@@ -34,11 +34,11 @@
 
 ## 👥 Contributors
 
-- **Rajeev Thota** - [GitHub](https://github.com/rajeevthota) - Project Lead
-- **[Teammate 1]** - [GitHub](#) - [Role/Contribution]
-- **[Teammate 2]** - [GitHub](#) - [Role/Contribution]
-- **[Teammate 3]** - [GitHub](#) - [Role/Contribution]
-- **[Teammate 4]** - [GitHub](#) - [Role/Contribution]
+- **Rajeev Thota** - [GitHub](https://github.com/rajeevthota)
+- **Nithin Chepuri** - [GitHub](https://github.com/rajeevthota) 
+- **Sai Vignesh** - [GitHub](https://github.com/rajeevthota) 
+- **Sreya Tejeswi** - [GitHub](https://github.com/rajeevthota) 
+- **Ashish Kumar** - [GitHub](https://github.com/rajeevthota) 
 
 ## 📚 References
 
