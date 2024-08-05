@@ -1,4 +1,4 @@
-# 🐞 Bug Localizer
+# 🐞 Bug Localizer Tool
 
 **Bug Localizer** is a tool designed to help software developers pinpoint and fix bugs in Java source code repositories using deep learning techniques. This tool processes bug reports and extracts features from Abstract Syntax Trees (ASTs) and Control Flow Graphs (CFGs) to train a model that accurately predicts bug locations.
 
