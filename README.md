@@ -4,11 +4,11 @@
 
 ## ✨ Features
 
-- 📥 **Data Collection**: Collects and preprocesses bug reports and Java source code files.
-- 📊 **Source Code Analysis**: Constructs ASTs, CFGs, and Program Dependence Graphs (PDGs).
-- 🔍 **Feature Extraction**: Utilizes advanced techniques like BERT embeddings.
-- 🧠 **Model Training**: Trains a transformer model to predict potential bug locations.
-- 🗺️ **Bug Localization**: Identifies probable areas where bugs are likely to occur.
+- **Data Collection**: Collects and preprocesses bug reports and Java source code files.
+- **Source Code Analysis**: Constructs ASTs, CFGs, and Program Dependence Graphs (PDGs).
+- **Feature Extraction**: Utilizes advanced techniques like BERT embeddings.
+- **Model Training**: Trains a transformer model to predict potential bug locations.
+- **Bug Localization**: Identifies probable areas where bugs are likely to occur.
 
 ## 🛠️ Tools Used
 
