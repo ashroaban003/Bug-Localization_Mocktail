@@ -1,6 +1,6 @@
 # 🐞 Bug Localizer Tool
 
-**Bug Localizer** is a tool designed to help software developers pinpoint and fix bugs in Java source code repositories using deep learning techniques. This tool processes bug reports and extracts features from Abstract Syntax Trees (ASTs) and Control Flow Graphs (CFGs) to train a model that accurately predicts bug locations.
+**Bug Localizer** is a tool designed to help software developers to find buggy files based on the bug reported in Java source code repositories using deep learning techniques. This tool processes bug reports and extracts features from Abstract Syntax Trees (ASTs) and Control Flow Graphs (CFGs) to train a model that accurately predicts bug files.
 
 ## ✨ Features
 
@@ -8,7 +8,7 @@
 - **Source Code Analysis**: Constructs ASTs, CFGs, and Program Dependence Graphs (PDGs).
 - **Feature Extraction**: Utilizes advanced techniques like BERT embeddings.
 - **Model Training**: Trains a transformer model to predict potential bug locations.
-- **Bug Localization**: Identifies probable areas where bugs are likely to occur.
+- **Bug Localization**: Identifies probable files where bugs are likely to occur.
 
 ## 🛠️ Tools Used
 
@@ -17,7 +17,7 @@
 - **Pandas**: For reading and preprocessing CSV files.
 - **SrcML**: For extracting ASTs.
 - **Progex**: For extracting CFGs.
-- **Comex**: For extracting PDGs and combining representations.
+- **Comex**: For extracting PDGs and combining representations of source codes.
 
 ## ⚠️ Limitations
 
@@ -35,8 +35,8 @@
 ## 👥 Contributors
 
 - **Rajeev Thota** - [GitHub](https://github.com/rajeevthota)
-- **Nithin Chepuri** - [GitHub](https://github.com/rajeevthota) 
-- **Sai Vignesh** - [GitHub](https://github.com/rajeevthota) 
+- **Nithin Chepuri** - [GitHub](https://github.com/NithinChepuri)
+- **Sai Vignesh** - [GitHub](https://github.com/SaiVignesh-K)
 - **Sreya Tejeswi** - [GitHub](https://github.com/rajeevthota) 
 - **Ashish Kumar** - [GitHub](https://github.com/rajeevthota) 
 
