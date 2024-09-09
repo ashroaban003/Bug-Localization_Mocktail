@@ -9,6 +9,7 @@
 - **Feature Extraction**: Utilizes advanced techniques like BERT embeddings.
 - **Model Training**: Trains a transformer model to predict potential bug locations.
 - **Bug Localization**: Identifies probable files where bugs are likely to occur.
+- **CLI Tool**: Help to modify pipleline through command line(changing assigning variable,etc).
 
 ## 🛠️ Tools Used
 
