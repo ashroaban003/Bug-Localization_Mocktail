@@ -1,0 +1,52 @@
+import numpy as np
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.ensemble import GradientBoostingClassifier
+from sklearn.metrics import accuracy_score
+
+# Sample dataset
+X, y = np.random.rand(1000, 20), np.random.randint(0, 2, 1000)
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Initialize two different models /AI model
+model1 = LogisticRegression()
+model2 = RandomForestClassifier()
+
+# Train the models on the same training data
+model1.fit(X_train, y_train)
+model2.fit(X_train, y_train)
+
+# Predict on the test dataset
+model1_pred = model1.predict(X_test)
+model2_pred = model2.predict(X_test)
+
+# Create a new dataset with predictions from both models
+new_dataset = pd.DataFrame({
+    'model1_pred': model1_pred,
+    'model2_pred': model2_pred,
+    'actual_sol': y_test
+})
+
+# Split the new dataset into features and target
+X_new = new_dataset[['model1_pred', 'model2_pred']]
+y_new = new_dataset['actual_sol']
+
+# Train the third mixture model
+model3 = GradientBoostingClassifier()
+model3.fit(X_new, y_new)
+
+# Example prediction with new data
+new_data = np.random.rand(1, 20)  # Replace with actual new data
+model1_result = model1.predict(new_data)
+model2_result = model2.predict(new_data)
+
+# Combine the results into a new feature set for the third model
+final_input = np.array([[model1_result[0], model2_result[0]]])
+
+# Get the final prediction from the third model
+final_prediction = model3.predict(final_input)
+
+print("Final Prediction:", final_prediction[0])
