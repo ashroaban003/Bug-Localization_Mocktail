@@ -1,0 +1,59 @@
+import ast
+import sys
+
+class ScriptModifier(ast.NodeTransformer):
+    def __init__(self, modifications):
+        self.modifications = modifications
+
+    def visit_Call(self, node):
+        if isinstance(node.func, ast.Attribute) and node.func.attr == 'fit':
+            for keyword in node.keywords:
+                if keyword.arg in self.modifications:
+                    new_value = self.modifications[keyword.arg]
+                    # Modify the argument value based on its type
+                    if isinstance(new_value, str):
+                        keyword.value = ast.Str(s=new_value)
+                    elif isinstance(new_value, int):
+                        keyword.value = ast.Constant(value=new_value)
+                    elif isinstance(new_value, float):
+                        keyword.value = ast.Constant(value=new_value)
+        return self.generic_visit(node)
+
+def modify_script(script_path, modifications):
+    with open(script_path, 'r') as file:
+        tree = ast.parse(file.read(), filename=script_path)
+
+    modifier = ScriptModifier(modifications)
+    # Apply modifications to the AST
+    tree = modifier.visit(tree)
+    ast.fix_missing_locations(tree)
+
+    modified_code = compile(tree, filename=script_path, mode='exec')
+    return modified_code
+
+def main(script_path, modifications):
+    modified_code = modify_script(script_path, modifications)
+    print("Modifications applied successfully. Executing the script...\n")
+    exec(modified_code, globals())
+
+if __name__ == "__main__":
+    if len(sys.argv) < 4 or len(sys.argv) % 2 != 0:
+        print("Usage: python modify_script.py <path_to_trial2.py> <key1> <value1> <key2> <value2> ...")
+        sys.exit(1)
+
+    script_path = sys.argv[1]
+    modifications = {}
+    for i in range(2, len(sys.argv), 2):
+        key = sys.argv[i]
+        value = sys.argv[i + 1]
+
+        if value.isdigit():
+            modifications[key] = int(value)
+        elif '.' in value and all(part.isdigit() for part in value.split('.', 1)):
+            modifications[key] = float(value)
+        else:
+            modifications[key] = value
+
+    main(script_path, modifications)
+
+#  python modify_script2.py trial.py epochs 10 test_train_ratio 0.3 activation 'sigmoid'
