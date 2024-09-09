@@ -33,12 +33,11 @@
 - Encouraging community contributions for continuous improvement.
 
 ## 👥 Contributors
-
+- **Ashish Kumar** - [GitHub](https://github.com/ashroaban003) 
 - **Rajeev Thota** - [GitHub](https://github.com/rajeevthota)
 - **Nithin Chepuri** - [GitHub](https://github.com/NithinChepuri)
 - **Sai Vignesh** - [GitHub](https://github.com/SaiVignesh-K)
 - **Sreya Tejeswi** - [GitHub](https://github.com/rajeevthota) 
-- **Ashish Kumar** - [GitHub](https://github.com/rajeevthota) 
 
 ## 📚 References
 
