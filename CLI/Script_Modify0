@@ -1,0 +1,50 @@
+import ast
+import sys
+
+# Function to modify specified variables in the training script
+def modify_script(script_path, modifications):
+    with open(script_path, 'r') as file:
+        tree = ast.parse(file.read(), filename=script_path)
+
+    class ScriptModifier(ast.NodeTransformer):
+        def visit_Call(self, node):
+            if isinstance(node.func, ast.Attribute) and node.func.attr == 'fit':
+                for keyword in node.keywords:
+                    if keyword.arg in modifications:
+                        new_value = modifications[keyword.arg]
+                        if isinstance(new_value, str):
+                            keyword.value = ast.Str(s=new_value)
+                        elif isinstance(new_value, int):
+                            keyword.value = ast.Constant(value=new_value)
+                        elif isinstance(new_value, float):
+                            keyword.value = ast.Constant(value=new_value)
+            return self.generic_visit(node)
+
+    tree = ScriptModifier().visit(tree)
+    ast.fix_missing_locations(tree)
+
+    modified_code = compile(tree, filename=script_path, mode='exec')
+    return modified_code
+
+def main(script_path, modifications):
+    modified_code = modify_script(script_path, modifications)
+    print("Modifications applied successfully. Executing the script...\n")
+    exec(modified_code, globals())
+
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        print("Usage: python modify_script.py <path_to_trial.py> <key1=value1> <key2=value2> ...")
+        sys.exit(1)
+
+    script_path = sys.argv[1]
+    modifications = {}
+    for arg in sys.argv[2:]:
+        key, value = arg.split('=')
+        modifications[key] = eval(value)  # Evaluate value to handle different types
+
+    main(script_path, modifications)
+
+
+
+    #  python modify_script.py trial.py epochs=3 test_train_ratio=0.2 
+    #  python modify_script.py trial2.py epoch1 3 epoch2 4
